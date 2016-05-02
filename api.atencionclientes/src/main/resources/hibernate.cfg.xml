@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"=//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+	<hibernate-configuration>
+	
+	<session-factory>
+	<!--  Database connection settings -->
+	<property name="connection.driver.class">org.postgresql.Driver</property>
+	<property name="connection.url">jdbc:postgresql://localhost:5432/atenclientes</property>
+	<property name="connection.username">reyes</property>
+	<property name="connection.password">Ucad123$</property>
+		
+	<!-- SQL Dialect -->
+	<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+	
+	<!-- Echo all executed SQL to stdout -->
+	<property name="show_sql">true</property>
+	
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Alumnos"/>
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Prestamos"/>
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Libro"/>
+	
+	
+	
+	</session-factory>
+	</hibernate-configuration>
