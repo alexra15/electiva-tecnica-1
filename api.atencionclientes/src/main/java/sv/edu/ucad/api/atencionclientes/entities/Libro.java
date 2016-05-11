@@ -1,17 +1,25 @@
 package sv.edu.ucad.api.atencionclientes.entities;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+
 @Entity
-@Table(name="libro")
+@Table(name="Libros")
 @Access(value=AccessType.PROPERTY)
 
 
@@ -23,8 +31,8 @@ public class Libro {
 	private int numjemlib;
 	private int numpaglib;
 	private String resulib;
-	private long codbiblio;
-	private long codcategolib;
+	//private long codbiblio;
+	//private long codcategolib;
 	
 	
 	//definir metodos getters y setters
@@ -39,6 +47,18 @@ public class Libro {
 	public void setCodlib(long codlib) {
 		this.codlib = codlib;
 	}
+	
+	List<Prestamos> prestamos = new ArrayList<Prestamos>();
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="codlib", nullable=false)	
+	public List<Prestamos> getPrestamos() {
+		return prestamos;
+	}
+	public void setSalas(List<Prestamos> prestamos) {
+		this.prestamos = prestamos;
+	}
+	
 	@Column(name="titlib", nullable=false)
 	public String getTitlib() {
 		return titlib;
@@ -74,7 +94,7 @@ public class Libro {
 	public void setResulib(String resulib) {
 		this.resulib = resulib;
 	}
-	@Column(name="codbiblio", nullable=false)
+/*	@Column(name="codbiblio", nullable=false)
 	public long getCodbiblio() {
 		return codbiblio;
 	}
@@ -90,5 +110,5 @@ public class Libro {
 	}
 	
 	
-
+*/
 }

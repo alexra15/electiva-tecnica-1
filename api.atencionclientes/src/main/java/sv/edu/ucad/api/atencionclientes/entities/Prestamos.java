@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="prestamos")
+@Table(name="Prestamos")
 @Access(value=AccessType.PROPERTY)
 
 
@@ -26,7 +26,7 @@ public class Prestamos {
 	private Date fentrepre;
 	private Date fdevpre;
 	private Date fmaxpre;
-	private long codlib;
+	//private long codlib;
 	private long codutil;
 	
 	public Alumnos alum;	
@@ -84,14 +84,14 @@ public class Prestamos {
 	public void setFmaxpre(Date fmaxpre) {
 		this.fmaxpre = fmaxpre;
 	}
-	@Column(name="codlib", nullable=false)
+	/*	@Column(name="codlib", nullable=false)
 	public long getCodlib() {
 		return codlib;
 	}
    public void setCodlib(long codlib) {
 		this.codlib = codlib;
 	}
-	
+	*/
 	@Column(name="codutil", nullable=false)
 	public long getCodutil() {
 		return codutil;

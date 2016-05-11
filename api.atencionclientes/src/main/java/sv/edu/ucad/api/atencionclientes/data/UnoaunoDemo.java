@@ -43,7 +43,7 @@ public class UnoaunoDemo {
 			prestamo.setFdevpre((new Date()));
 			prestamo.setFmaxpre((new Date()));
 	        prestamo.setPrest(alum);
-			prestamo.setCodlib((long) 1);
+		//	prestamo.setCodlib((long) 1);
 			prestamo.setCodutil((long) 1);
 			//modificado por la OneToOne Uninidireccional
 			prestamo.setCodpre((long) 1);	
