@@ -46,12 +46,12 @@ public class UnoaMuchosUniDemo {
 	
 	private static Alumnos createNuevaAluant(){
 		Alumnos aluant = new Alumnos();
-		aluant.setNomalu("Erica");
-		aluant.setApealu("Martinez");
-		aluant.setCarnetalu("CM12005");
-		aluant.setCicloalu("IX");
-		aluant.setCuealu("EriMar");
-		aluant.setClavealu("ucad00");
+		aluant.setNomalu("jorge");
+		aluant.setApealu("perez");
+		aluant.setCarnetalu("jr34tf");
+		aluant.setCicloalu("I");
+		aluant.setCuealu("Erd");
+		aluant.setClavealu("1234");
 		return aluant;
 	}//fin de createNuevaAluant
 	
