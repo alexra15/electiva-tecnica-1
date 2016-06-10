@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +21,17 @@ public class Alumnos {
 	private String cicloalu;
 	private String cuealu;
 	private String clavealu;
+	
+	
+	public Prestamos prestamos;
+			
+	@OneToOne(mappedBy="alumnos")
+	public Prestamos getPrestamos() {
+		return prestamos;
+	}
+	public void setPrestamos(Prestamos prestamos) {
+		this.prestamos = prestamos;
+	}
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

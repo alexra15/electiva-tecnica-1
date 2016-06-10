@@ -29,6 +29,7 @@ public class Prestamos {
 //Tabla asociada
 	public Utiles util;
 	public Alumnos alumnos;
+	
 @OneToOne(cascade=CascadeType.ALL)
 @JoinColumn(name="codutil")
 	public Utiles getUtil() {
