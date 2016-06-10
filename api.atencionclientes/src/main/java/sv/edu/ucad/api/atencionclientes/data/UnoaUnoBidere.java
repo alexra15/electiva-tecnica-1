@@ -25,8 +25,8 @@ public class UnoaUnoBidere {
 				sesion.save(prestamos);
 				transaccion.commit();
 				
-			//	Alumnos bdalumnos =(Alumnos)sesion.get(Alumnos.class prestamos.getAlumnos().getCodalu());
-			//	System.out.println('el codigo es :'+ dbalumnos.getnomalu());
+				Alumnos bdalumnos =(Alumnos)sesion.get(Alumnos.class, prestamos.getAlumnos().getCodalu());
+				System.out.println("el codigo es :"+ bdalumnos.getNomalu());
 				
 			}
 			catch(Exception e){
