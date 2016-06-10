@@ -1,22 +1,22 @@
 package sv.edu.ucad.api.atencionclientes.data;
 
-import java.util.Date;
-
 import org.hibernate.Session;
 
-import sv.edu.ucad.api.atencionclientes.entities.Libro;
-import sv.edu.ucad.api.atencionclientes.entities.Prestamos;
+import sv.edu.ucad.api.atencionclientes.entities.Alumnos;
+import sv.edu.ucad.api.atencionclientes.entities.Carrera;
 
 public class UnoaMuchosUniDemo {
 	public static void main(String[] args){
 		Session sesion = HibernateUtil.getSessionFactory().openSession();
 		try{
 			org.hibernate.Transaction transaccion = sesion.beginTransaction();
-			// tabla sala es administradora y la sucursal es la administrada
-		Libro Libro = createNuevaLibro();
-		Libro.getPrestamos().add(createNuevaPrestamosImax());
-		Libro.getPrestamos().add(createNuevaPrestamosStandard());
-			sesion.save(Libro);
+			
+			
+			Carrera car = createNuevaCar();
+			car.getAlumnos().add(createNuevaAlunu());
+			car.getAlumnos().add(createNuevaAluant());
+				
+			sesion.save(car);
 			
 			transaccion.commit();
 		}catch(Exception e){
@@ -26,43 +26,33 @@ public class UnoaMuchosUniDemo {
 			HibernateUtil.getSessionFactory().close();
 		}
 	}//fin del metodo main
-
-	private static Libro createNuevaLibro(){
-		Libro Libro = new Libro();
-		//Libro.setCodlib((long) 4);
-		Libro.setTitlib("Multiplaza");
-		Libro.setSubtitlib("Merliot, La Libertad");
-		Libro.setNumjemlib(7);
-		Libro.setNumpaglib(8);
-		Libro.setResulib("MerliT");
-		return Libro;
-	}//fin de createNuevaSucursal
 	
-	private static Prestamos createNuevaPrestamosImax(){
-		Prestamos cnPrestamosImax = new Prestamos();
-		
-		cnPrestamosImax.setFentrepre((new Date()));
-		cnPrestamosImax.setFdevpre((new Date()));
-		cnPrestamosImax.setFmaxpre((new Date()));
-//		cnPrestamosImax.setPrest(alum);
-		//cnPrestamosImax.setCodlib((long) 4);
-		//cnPrestamosImax.setCodutil((long)5);
-			//modificado por la OneToOne Uninidireccional
-	//	cnPrestamosImax.setCodpre((long) 1);	
-			return cnPrestamosImax;
-	}//fin de createNuevaSalasImax
+	private static Carrera createNuevaCar(){
+		Carrera car = new Carrera();
+		car.setNomcar("Ing_Computacion");
+		return car;
+	}//fin de createNuevaCar
 	
-	private static Prestamos createNuevaPrestamosStandard(){
-		Prestamos cnPrestamosStd = new Prestamos();
-		cnPrestamosStd.setFentrepre((new Date()));
-		cnPrestamosStd.setFdevpre((new Date()));
-		cnPrestamosStd.setFmaxpre((new Date()));
-//		cnPrestamosImax.setPrest(alum);
-		//cnPrestamosStd.setCodlib((long) 4);
-		//cnPrestamosStd.setCodutil((long)4);
-			//modificado por la OneToOne Uninidireccional
-		//cnPrestamosStd.setCodpre((long) 2);	
-			return cnPrestamosStd;
-	}//fin de createNuevaSalasImax	
+	private static Alumnos createNuevaAlunu(){
+		Alumnos alunu = new Alumnos();
+		alunu.setNomalu("Luis");
+		alunu.setApealu("Escobar");
+		alunu.setCarnetalu("EH12016");
+		alunu.setCicloalu("I");
+		alunu.setCuealu("LuiH");
+		alunu.setClavealu("perro");
+		return alunu;
+	}//fin de createNuevaAlunu
+	
+	private static Alumnos createNuevaAluant(){
+		Alumnos aluant = new Alumnos();
+		aluant.setNomalu("Erica");
+		aluant.setApealu("Martinez");
+		aluant.setCarnetalu("CM12005");
+		aluant.setCicloalu("IX");
+		aluant.setCuealu("EriMar");
+		aluant.setClavealu("ucad00");
+		return aluant;
+	}//fin de createNuevaAluant
 	
 }//fin de clase ppal

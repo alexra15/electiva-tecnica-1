@@ -17,10 +17,12 @@
 	
 	<!-- Echo all executed SQL to stdout -->
 	<property name="show_sql">true</property>
-	
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Carrera"/>
 	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Alumnos"/>
 	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Prestamos"/>
-	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Libro"/>
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Utiles"/>
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Carreras"/>
+	<mapping class="sv.edu.ucad.api.atencionclientes.entities.Facultad"/>
 	
 	
 	
